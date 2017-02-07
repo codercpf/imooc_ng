@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/bootstrap2.min.css">
+    <style>
+        .error{
+            border: 1px solid #a10;
+        }
+
+    </style>
+
+</head>
+
+<body ng-app="myApp" ng-controller="mainCtrl">
+    <form name="singUpForm" ng-submit="submitForm()">
+        <div class="form-group">
+            <label>用户名：</label>
+            <input type="text" class="form-control" name="username" required
+                   ng-model="username"
+                   ng-disabled="singUpForm.username2.$valid"
+                   ng-class="{'error':singUpForm.username.$invalid && singUpForm.username.$touched}"
+                   ng-minlength="4">
+            <!-- ng-class：当验证不通过时，在class中追加一个error -->
+
+            <input type="text" class="form-control" name="username2" required
+                    ng-model="username2"
+                    ng-disabled="singUpForm.username.$valid">
+            <!-- ng-disabled：当验证不通过时，使控件无效-->
+
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" ng-disabled="singUpForm.$invalid">提交</button>
+        </div>
+
+        <!--<div ng-if="singUpForm.username.$invalid && singUpForm.username.$touched">您的输入有误！</div>
+        <div ng-if="singUpForm.username.$valid">success!!!</div>-->
+        <!-- ng-if：当满足其中的条件时，显示后面的内容-->
+
+
+
+
+
+
+    </form>
+
+    <script src="lib/angular.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
