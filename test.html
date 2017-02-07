@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="lib/bootstrap2.min.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
     <style>
         .error{
             border: 1px solid #a10;
@@ -20,7 +20,7 @@
             <input type="text" class="form-control" name="username" required
                    ng-model="username"
                    ng-disabled="singUpForm.username2.$valid"
-                   ng-class="{'error':singUpForm.username.$invalid && singUpForm.username.$touched}"
+                   ng-class="{'error': singUpForm.username.$invalid && singUpForm.username.$touched}"
                    ng-minlength="4">
             <!-- ng-class：当验证不通过时，在class中追加一个error -->
 
@@ -36,12 +36,14 @@
 
         <!--<div ng-if="singUpForm.username.$invalid && singUpForm.username.$touched">您的输入有误！</div>
         <div ng-if="singUpForm.username.$valid">success!!!</div>-->
-        <!-- ng-if：当满足其中的条件时，显示后面的内容-->
+        <!-- ng-if：当满足其中的条件时，显示该div的内容-->
 
-
-
-
-
+        <div ng-if="2+2===5">
+            Won't see this DOM node, not even in the source code
+        </div>
+        <div ng-if="2+2===4">
+            Hi, I do exist
+        </div>
 
     </form>
 
